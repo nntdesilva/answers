@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class MountainArraySearch {
     //https://leetcode.com/problems/find-in-mountain-array/
     public static void main(String[] args) {
@@ -15,12 +13,7 @@ public class MountainArraySearch {
             return idx;
         }
         idx = binarySearch(arr, target, maxIndex, arr.length-1);
-        System.out.println(idx);
-        if (idx != -1) {
-            return idx;
-        } else {
-            return -1;
-        }
+        return idx;
 
     }
 

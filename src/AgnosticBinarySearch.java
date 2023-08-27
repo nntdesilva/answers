@@ -1,35 +1,32 @@
 public class AgnosticBinarySearch {
     public static void main(String[] args) {
-        int[] arr = {50, 45, 32, 22, 20, 16, 5, 1};
-//        int[] arr = {2, 6, 8, 12, 15, 20};
-//        int[] arr = {3,3,3,3,3,3};
-        System.out.println(agnosticBinarySearch(arr, 12));
+        int[] arr = {5, 2, 1};
+        System.out.println(agnosticBinarySearch(arr, 2));
     }
 
-    static int agnosticBinarySearch(int[] arr, int target){
-        int firstEl = arr[0];
-        int lastEl = arr[arr.length - 1];
+    static int agnosticBinarySearch(int[] arr, int target) {
         int start = 0;
         int end = arr.length - 1;
+
+        boolean isAsc = arr[start] < arr[end];
+
         while (start <= end) {
             int mid = start + (end - start) / 2;
-            if(arr[mid] == target){
+
+            if (arr[mid] == target) {
                 return mid;
             }
-            else if(arr[mid] == target && firstEl == lastEl){
-                return mid;
-            }
-            else if(firstEl>lastEl){
-                if(arr[mid] < target){
-                    end = mid - 1;
-                }else{
+
+            if (isAsc) {
+                if (arr[mid] < target) {
                     start = mid + 1;
-                }
-            }
-            else{
-                if(target < arr[mid]){
+                } else {
                     end = mid - 1;
-                } else{
+                }
+            } else {
+                if (arr[mid] < target) {
+                    end = mid - 1;
+                } else {
                     start = mid + 1;
                 }
             }

@@ -1,15 +1,11 @@
 public class RotationCount {
     public static void main(String[] args) {
         int[] arr = {4, 5, 6, 7, 0, 1, 2};
-        System.out.println(rotationCount(arr));  // 4
+        System.out.println(rotationCount(arr));
     }
 
     public static int rotationCount(int[] arr) {
-        int pivot = findPivot(arr);
-        if (pivot == -1) {
-            return 0;
-        }
-        return pivot + 1;
+        return findPivot(arr) + 1;
 
     }
 

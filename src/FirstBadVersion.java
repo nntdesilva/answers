@@ -1,10 +1,15 @@
 /* The isBadVersion API is defined in the parent class VersionControl.
       boolean isBadVersion(int version); */
 
-public class Solution extends VersionControl {
+public class FirstBadVersion {
     // https://leetcode.com/problems/first-bad-version/
     public int firstBadVersion(int n) {
         return search(1, n);
+    }
+
+    public boolean isBadVersion(int version){
+        int bad = 4;
+        return version == bad;
     }
 
 

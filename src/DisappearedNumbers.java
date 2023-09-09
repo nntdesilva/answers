@@ -2,11 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 class DisappearedNumbers {
-    public static void main(String[] args) {
-        int[] arr = {1,1};
-        List<Integer> l = findDisappearedNumbers(arr);
-        System.out.println(l);
-    }
+    // https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
 
     static List<Integer> findDisappearedNumbers(int[] arr) {
         List<Integer> list = new ArrayList<>();
@@ -27,8 +23,6 @@ class DisappearedNumbers {
         }
         return list;
     }
-
-
 
     static void swap(int[] arr, int first, int second) {
         int temp = arr[first];

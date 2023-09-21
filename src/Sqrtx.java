@@ -1,14 +1,12 @@
 public class Sqrtx {
-    public static void main(String[] args) {
-        System.out.println(mySqrt(8));
-    }
+    // https://leetcode.com/problems/sqrtx/
 
     static int mySqrt(int x) {
         if (x < 2) {
             return x;
         }
         long start = 1;
-        long end = (long)x;
+        long end = x;
         while (start <= end) {
             long mid = start + (end - start) / 2;
             if (mid * mid == x) {
